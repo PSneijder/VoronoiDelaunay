@@ -129,7 +129,7 @@ namespace VoronoiDelaunay.ViewModels
                     Y1 = lineSegment.P0.Value.Y,
                     Y2 = lineSegment.P1.Value.Y,
 
-                    Stroke = new SolidColorBrush(Colors.LightGray),
+                    Stroke = new SolidColorBrush(Colors.Azure),
                     StrokeThickness = 1
                 });
             }
@@ -138,7 +138,7 @@ namespace VoronoiDelaunay.ViewModels
             {
                 var ellipse = new Ellipse
                 {
-                    Stroke = new SolidColorBrush(Colors.Wheat),
+                    Stroke = new SolidColorBrush(Colors.OrangeRed),
                     StrokeThickness = 5
                 };
 
