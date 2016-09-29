@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="TitleTemplate">
+        <StackPanel Margin="7,0,0,0"
+                    VerticalAlignment="Center"
+					Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style x:Key="TitleTextBlockStyle"
+					   TargetType="TextBlock">
+                    <Setter Property="FontSize"
+							Value="14" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Style="{StaticResource TitleTextBlockStyle}">
+				<Run Text="TEST"
+					 FontWeight="ExtraBold" />
+				<Run Text="VoronoiDiagram" />
+            </TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    
+</ResourceDictionary>

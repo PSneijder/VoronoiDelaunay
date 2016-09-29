@@ -1,0 +1,40 @@
+﻿<mahApps:MetroWindow x:Class="VoronoiDelaunay.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:VoronoiDelaunay.ViewModels"
+        xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+        TitleTemplate="{DynamicResource TitleTemplate}"
+        Height="350" Width="600"
+        ResizeMode="CanResizeWithGrip"
+        DataContext="{DynamicResource ViewModel}">
+
+    <Window.Resources>
+        <viewModels:MainWindowViewModel x:Key="ViewModel" />
+    </Window.Resources>
+
+    <Grid Margin="5">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ItemsControl Grid.Row="0"
+                      Grid.Column="0"
+                      ItemsSource="{Binding Path=ShapeSegments}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Canvas Name="Canvas">
+                        <Canvas.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding Path=MouseClickedCommand}" CommandParameter="{Binding ElementName=Canvas}"></MouseBinding>
+                        </Canvas.InputBindings>
+                    </Canvas>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </Grid>
+    
+</mahApps:MetroWindow>
